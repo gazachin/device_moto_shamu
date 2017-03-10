@@ -23,13 +23,20 @@ TARGET_CPU_VARIANT := krait
 ENABLE_CPUSETS := true
 
 TARGET_NO_BOOTLOADER := true
+O3_OPTS := true
+POLLY_OPTS := true
+GRAPHITE_OPTS := true
+STRICT_ALIASING := true
+SDCLANG := true
+SDCLANG_PATH := prebuilts/clang/linux-x86/host/sdclang-3.8/bin
+TARGET_NO_BOOTLOADER := true
 
 # Inline kernel building
 TARGET_KERNEL_CONFIG := pure_defconfig
 TARGET_KERNEL_SOURCE := kernel/moto/shamu
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
-KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.9/bin
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
 
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE :=  2048
