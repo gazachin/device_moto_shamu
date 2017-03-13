@@ -464,3 +464,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.media_vol_steps=20 \
     ro.telephony.call_ring.delay=0 \
     ring.delay=0
+
+# Open GApps
+ifneq ($(HAS_GAPPS),false)
+    $(call inherit-product-if-exists, device/moto/shamu/opengapps.mk)
+    $(call inherit-product-if-exists, vendor/google/build/opengapps-packages.mk)
+endif
